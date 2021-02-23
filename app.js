@@ -13,7 +13,7 @@ async function dataGithub(utilisateur){
     const reponse = await fetch(`${APICALL}${utilisateur}`)
     const data = await reponse.json();
 
-   // console.log(data);
+    //console.log(data);
 
     creationCarte(data);
 }
@@ -26,6 +26,7 @@ function creationCarte(user){
         <img src="${user.avatar_url}" alt= "icone avatar utilisateur" class="avatar">
         <h2>${user.name}<h2/>
         <ul class="cont-infos">
+            <li class="bio">Pseudo :  ${user.login}</li>
             <li class="followers">Followers : ${user.followers}</li>
             <li class="etoiles">Repository : ${user.public_repos}</li>
             <li class="bio">Bio : ${user.bio}</li>
